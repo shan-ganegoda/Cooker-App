@@ -1,0 +1,25 @@
+.navbar{
+  position: sticky;
+  top: 0;
+  padding: 1rem;
+  background: rgb(0,198,251);
+  background: radial-gradient(circle, rgba(0,198,251,1) 0%, rgba(0,91,234,1) 100%);
+}
+
+.nav{
+  position: absolute;
+  right: 1rem;
+}
+
+.navlist{
+  display: flex;
+  flex-direction: row;
+  column-gap: 3rem;
+  list-style-type: none;
+
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+}
