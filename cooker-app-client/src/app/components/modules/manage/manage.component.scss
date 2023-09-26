@@ -1,0 +1,40 @@
+.form{
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Employee Form > Photo Panel  */
+#imgpanel {
+  height: 100px;
+  margin-bottom: 30px;
+}
+
+#imgpanel img{
+  height: 100px;
+  width: 100px;
+}
+
+#selectbutton, #clearbutton{
+  width: 150px;
+  display: block;
+  margin-left: 150px;
+  margin-bottom: 5px;
+  background-color: darkolivegreen;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#selectbutton{
+  margin-top: -100px;
+}.selected-row{
+   background-color: #c9e6ff!important;
+ }
+
+.mat-row:hover {
+  background-color: inherit!important;
+}
+
+

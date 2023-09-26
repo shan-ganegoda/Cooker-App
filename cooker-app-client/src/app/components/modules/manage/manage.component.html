@@ -1,0 +1,65 @@
+<mat-grid-list [cols]="12" rowHeight="4rem">
+
+  <mat-grid-tile [colspan]="6" [rowspan]="12">
+
+    <mat-form class="form"  [formGroup]="form" >
+
+      <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <input matInput formControlName="description">
+      </mat-form-field>
+
+      <div id="imgpanel">
+        <img [src]="imageempurl">
+        <input id="userImage" hidden="hidden" (change)="selectImage($event)" Select type="file" formControlName="photo">
+        <label for="userImage" id="selectbutton">Select</label>
+        <label id="clearbutton" (click)="clearImage()">Clear</label>
+      </div>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="category">
+          <mat-option [value]="null" selected>Not Selected</mat-option>
+<!--          <mat-option *ngFor="let division of divisions" [value]="division">{{division.name}}</mat-option> -->
+        </mat-select>
+      </mat-form-field>
+
+    </mat-form>
+
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="6" [rowspan]="12">
+
+    <mat-table [dataSource]="data">
+
+      <ng-container *ngFor="let column of columns;let i = index;" [matColumnDef]="column">
+        <mat-header-cell *matHeaderCellDef> {{headers[i]}} </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ uiassist.getProperty(element, binders[i]) }} </mat-cell>
+      </ng-container>
+
+      <ng-container *ngFor="let cscolumn of cscolumns;let i = index;" [matColumnDef]="cscolumn">
+        <mat-header-cell *matHeaderCellDef>
+          <mat-form [formGroup]="csearch" class="csearch">
+            <mat-form-field appearance="outline">
+              <mat-label>{{csprompts[i]}}</mat-label>
+              <input matInput [formControlName]="cscolumn">
+<!--                     (keyup)="filterTable()">-->
+            </mat-form-field>
+          </mat-form>
+        </mat-header-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+      <mat-header-row *matHeaderRowDef="cscolumns"></mat-header-row>
+<!--      <mat-row *matRowDef="let row; columns: columns;" (click)="fillForm(row)" [ngClass]="{'selected-row': row === selectedrow}"></mat-row>-->
+
+    </mat-table>
+
+  </mat-grid-tile>
+
+</mat-grid-list>

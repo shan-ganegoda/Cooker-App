@@ -13,6 +13,12 @@ import { HomeComponent } from './components/modules/home/home.component';
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
+import { ManageComponent } from './components/modules/manage/manage.component';
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatOptionModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -20,7 +26,8 @@ import {MatInputModule} from "@angular/material/input";
     MainwindowComponent,
     HeaderComponent,
     ReceipiesComponent,
-    HomeComponent
+    HomeComponent,
+    ManageComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +37,12 @@ import {MatInputModule} from "@angular/material/input";
     MatIconModule,
     MatCardModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatGridListModule,
+    MatOptionModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
